@@ -98,7 +98,7 @@ https://raw.github.com/shagstrom/split-pane/master/LICENSE
 		}
 		var moveEventHandler = createMousemove($splitPane, pageXof(event), pageYof(event));
 		$(document).on('touchmove mousemove', moveEventHandler);
-		$(document).one('touchend mouseup', function(event) {
+		$($divider).one('touchend mouseup', function(event) {
 			$(document).off('touchmove mousemove', moveEventHandler);
 			$divider.removeClass('dragged touch');
 			$splitPane.trigger('dividerdragend', [ getComponentsSizes($splitPane) ]);
